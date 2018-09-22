@@ -29,9 +29,10 @@ public class StringAccumulatorTest extends TestCase {
 
 	@Parameterized.Parameters
 	public static Collection inputStrings() {
-		return (Collection) Arrays.asList(new Object[][] { { "//**|,|^\n2**1001,23\n34\n", 59 },
-			{ "//**|,|^\n2**1000,23\n34\n", 1059 }, { "//**|,|^\n23\n34\n", 57 },
-			{ "//**|,|^\n2**-1001,\n-23\n-34\n", 2 }, { "//**|,|^\n23,\n", 23 }, { "//**|,|^\n23,23", 46 }, { "//**|,|^\n23.89,23", 46 } });
+		return (Collection) Arrays.asList(
+				new Object[][] { { "", 0 }, { "1", 1 }, { "1,2", 3 }, { "1,2,3,4,5,6,7,89,90,26,78,57,89", 457 },
+					{ "1\n2,3", 6 }, { "1,\n", 0 }, { "//;\n1;2;", 3 }, { "2,-1001", 2 }, { "//***\n1***2***3", 6 },
+					{ "//*|%\n1*2%3", 6 }, { "//**|,|^\n1\n2\n", 3 }, { "//***|%%%|^^^\n1***2%%%3^^^4", 10 } });
 	}
 
 	@Test
