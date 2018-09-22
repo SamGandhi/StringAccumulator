@@ -6,7 +6,7 @@ public class StringAccumulatorService {
 		System.out.println("hello world");
 		StringAccumulatorImp service = new StringAccumulatorImp();
 		try {
-			System.out.println(service.add("34,\n"));
+			System.out.println(service.add("1,2,3,4,5,6,7,89,90,26,78,57,89"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
